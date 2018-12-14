@@ -95,6 +95,10 @@ struct Car {
         }
     }
     
+    mutating func printInfo(){
+        print("Марка авто \(brand). Год выпуска \(productionYear). Объем багажника \(volumeOfTrunk).")
+    }
+    
     init(brand: String, productionYear: Int, volumeOfTrunk: Int, typeOfCar: typeOfCar){
         self.brand = brand
         self.productionYear = productionYear
@@ -108,12 +112,14 @@ struct Car {
 }
 
 var passengerCar : Car = Car(brand: "Nissan Almera", productionYear: 2017, volumeOfTrunk: 450, typeOfCar: .passengerCar)
-
+passengerCar.printInfo()
 passengerCar.changeEngineState(.start)
 passengerCar.changeWindowsState(.close)
 passengerCar.changeTrankState(trunk: .putIn, volume: 1000)
 print("")
+
 var trackCar : Car = Car(brand: "Scania", productionYear: 2014, volumeOfTrunk: 25000, typeOfCar: .track)
+trackCar.printInfo()
 trackCar.changeConditionState(.start)
 trackCar.changeEngineState(.start)
 trackCar.changeConditionState(.start)
